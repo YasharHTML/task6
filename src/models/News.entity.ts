@@ -13,6 +13,9 @@ export class News {
     @Column()
     text!: string;
 
-    @ManyToOne(() => User, (user) => user.news, { eager: true }) // eager: true so data automatically comes easily
+    @ManyToOne(() => User, (user) => user.news)
     user!: User;
+
+    @Column()
+    userId!: number;
 }
