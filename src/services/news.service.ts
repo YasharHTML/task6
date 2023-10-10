@@ -18,7 +18,7 @@ export function createNews({ text, title, userId }: CreateNewsDto) {
 }
 
 export function updateNews(id: number, { text, title }: UpdateNewsDto) {
-    return repository.update(id, { text, title });
+    return repository.save({ id, text, title });
 }
 
 export function deleteNews(id: number) {
